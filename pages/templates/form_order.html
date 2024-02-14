@@ -1,0 +1,235 @@
+
+
+        {% load static %}
+
+        <!DOCTYPE html>
+        <html dir="rtl">
+        
+        <head dir="rtl">
+          <meta charset="utf-8">
+          <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        
+          <title> Details</title>
+          <meta content="" name="description">
+          <meta content="" name="keywords">
+        
+<link href="{%static 'assets/css/style1.css' %}" rel="stylesheet">
+
+ 
+          <link href="{% static 'assets/img/favicon' %}" rel="icon">
+          <link href="{% static 'assets/img/apple-touch-icon.png' %}rel="apple-touch-icon">
+        
+      <!-- Google Fonts -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet">
+               
+  <link rel="stylesheet" href= "{% static 'formm/style.css' %}">
+    
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet" >
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}"rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}"  rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="{% static 'assets/css/style2.css' %}"  rel="stylesheet">
+</head>
+
+<body dir="rtl">
+
+
+    <main class="col-md-7">
+    <div class="container" dir="rtl">
+        <br><br>
+        <header>يرجى ادخال المعلومات كامل</header>
+       
+        <form action="#"  method="post">
+                {% csrf_token %} 
+            <div class="form first">
+                <div class="details personal">
+        
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>الاسم الكامل</label>
+                            <input type="text" name="Full Name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>رقم الهاتف</label>
+                            <input type="text" name="Phone" placeholder="Enter your Phone" onclick="showHintText()" required>
+                            <small id="hint-text" class="hint-text">سيتم إرسال رسالة تأكيد إلى الرقم المدخل</small>
+                        </div>
+                        <script>function showHintText() {
+                            var hintText = document.getElementById("hint-text");
+                            hintText.style.display = "inline";
+                          }
+                          </script>
+                        <div class="input-field">
+                            <label> طول العباية</label>
+                            <input type="number" name="Length" placeholder="Enter your lenght" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label> اكتاف العباية</label>
+                            <input type="number" name="shoulders" placeholder="Enter your shoulders_size" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>كم العباية</label>
+                            <input type="number" name="sleeve" placeholder="Enter  Abaya sleeve" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label> صدر العباية</label>
+                            <input type="number" name="width" placeholder="Enter Abaya Chest" required>
+                        </div>
+
+
+                 
+
+                        <div class="input-field">
+                            <label>المنطقة</label>
+                            <input type="text" name="area" placeholder="Enter" required>
+                        </div>
+                        <div class="input-field">
+                            <label> مكان التسليم: </label>
+            
+                            <select type="text" name="type_address" required>
+                                <option  value="Home">منزل</option>
+                                <option value="Apartment">بناية</option>
+                                <option value="office">مكتب</option> </select>
+                        </div>
+                    
+                        <div class="input-field">
+                            <label>المنزل</label>
+                            <input type="text" name="house" placeholder="Enter" required>
+                        </div>
+                        <div class="input-field">
+                            <label> الطابق </label>
+                            <input type="text" name="block" placeholder="Enter" required>
+                        </div>
+                        <div class="input-field">
+                            <label>الشارع </label>
+                            <input type="text" name="street" placeholder="Enter" required>
+                        </div>
+
+        
+                       
+             
+                            <div class="input-field">
+                                <label>ملاحظات</label>
+                                <input type="text" name="notes" placeholder="Enter your note" required>
+                            </div>
+                         
+                    </div> 
+                </div>
+                    <button class="nextBtn">
+                        <span class="btnText">التالي</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+                
+              
+            </div>
+            </div>
+            
+        </form>
+ 
+
+<!-- 
+        <div class="row no-gutters">
+            <div dir="rtl" class="col-md-11">
+                <div dir="rtl"  class="product-details mr-2">
+        <div class="col-md-6 align-items-center" >
+            <div class="payment-info">
+                <div class="d-flex justify-content-between align-items-center"><span>Card details</span><img class="rounded"  width="30"></div><span class="type d-block mt-3 mb-1">Card type</span><label class="radio"> <input type="radio" name="card" value="payment" checked> <span><img width="30" src="https://img.icons8.com/color/48/000000/mastercard.png"/></span> </label>
+
+<label class="radio"> <input type="radio" name="card" value="payment"> <span><img width="30" src="https://img.icons8.com/officel/48/000000/visa.png"/></span> </label>
+
+
+
+
+
+                <div><label class="credit-card-label">Name on card</label><input type="text" class="form-control credit-inputs" placeholder="Name"></div>
+                <div><label class="credit-card-label">Card number</label><input type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000"></div>
+                <div class="row">
+                    <div class="col-md-6"><label class="credit-card-label">Date</label><input type="text" class="form-control credit-inputs" placeholder="12/24"></div>
+                    <div class="col-md-6"><label class="credit-card-label">CVV</label><input type="text" class="form-control credit-inputs" placeholder="342"></div>
+                </div>
+                <hr class="line">
+                {% comment %} <div class="d-flex justify-content-between information"><span>Subtotal</span><span>$3000.00</span></div> {% endcomment %}
+                {% comment %} <div class="d-flex justify-content-between information"><span>Shipping</span><span>$20.00</span></div> {% endcomment %}
+                <div class="d-flex justify-content-between information"><span>Total</span><span></span></div><button class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button">
+                    <span></span><span>Checkout<i class="fa fa-long-arrow-right ml-1"></i></span></button></div>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+    </div>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</main>
+
+<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

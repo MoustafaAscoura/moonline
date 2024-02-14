@@ -1,0 +1,140 @@
+----------------------
+:root{
+    --color-1: #2f3240;
+}
+body{
+	font-family: sans-serif;
+	background-color: #e8eef3;
+}
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+} 
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}.container1{
+	max-width: 1170px;
+	margin:auto;
+}
+.row1{
+	display: flex;
+	flex-wrap: wrap;
+}
+.align-items-center1{
+	align-items: center;
+}
+.justify-content-between1{
+	justify-content: space-between;
+}
+/*header*/
+.header1{
+	background-color:#ff4917dc;
+	padding: 12px 0;
+	line-height: 1.5;
+}
+
+.header1 .logo1,
+.header1 .nav1{
+	padding:0 15px;
+}
+.header1 .logo1 a{
+	font-size: 30px;
+	color: #ffffff;
+	text-transform: capitalize;
+}
+.header1 .nav1 ul li{
+	display: inline-block;
+	margin-left: 40px;
+}
+.header1 .nav1 ul li a{
+	display: block;
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	padding: 10px 0;
+	transition: all 0.5s ease;
+}
+.header1 .nav1 ul li a.active1,
+.header1 .nav1 ul li a:hover{
+	color: #f3a93d;
+}
+.nav-toggler1{
+	height: 34px;
+	width: 44px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	cursor: pointer;
+	border:none;
+	display: none;
+	margin-right: 15px;
+}
+.nav-toggler1:focus{
+	outline: none;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+.nav-toggler1 span{
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-1);
+    display: block;
+    margin:auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.nav-toggler1.active1 span{
+	background-color: transparent;
+}
+.nav-toggler1 span::before,
+.nav-toggler1 span::after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-1);
+	transition: all 0.3s ease;
+}
+.nav-toggler1 span::before{
+	transform: translateY(-6px);
+}
+.nav-toggler1.active1 span::before{
+	transform: rotate(45deg);
+}
+.nav-toggler1 span::after{
+	transform: translateY(6px);
+}
+.nav-toggler1.active1 span::after{
+	transform: rotate(135deg);
+}
+@media(max-width:991px){
+   .nav-toggler1{
+   	display: block;
+   }
+   .header1 .nav1{
+   	width: 100%;
+   	padding:0;
+   	max-height: 0px;
+   	overflow: hidden;
+   	visibility: hidden;
+   	transition: all 0.5s ease;
+   }
+   .header1 .nav1.open{
+   	visibility: visible;
+   }
+   .header1 .nav1 ul{
+   	padding:12px 15px 0;
+   	margin-top: 12px;
+   	border-top:1px solid rgba(255,255,255,0.2);
+   }
+   .header1 .nav1 ul li{
+   	display: block;
+   	margin:0;
+   }
+}
+
+

@@ -1,0 +1,5 @@
+{%for i in produ %}
+        <h1>{{i.product_name}}</h1>
+
+        <a href="{% url 'pages:details' i.id %}">View</a>
+{% endfor %}
