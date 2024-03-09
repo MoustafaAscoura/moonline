@@ -1,0 +1,30 @@
+<header class="header1">
+    <div class="container1">
+        <div class="row1 align-items-center1 justify-content-between1">
+            <div class="logo1">
+               <a href="{% url 'pages:app' %}">Moonline</a>
+            </div>
+            <button type="button" class="nav-toggler1">
+               <span></span>
+            </button>
+            <nav class="nav1">
+               <ul>
+                <li><select id="kk" onchange="redirectToLink(this)" style="border-radius: 15%; color: aliceblue;background-color: #ff4a17;">
+                  <option value=""> الأقسام</option>
+                  <option value="{% url 'pages:kind_view' 'classic'%}"> عصري</option>
+                  <option value="{% url 'pages:kind_view' 'New'%}"> جديد</option>
+                  <option value="{% url 'pages:kind_view' 'Black'%}"> اسود</option>
+                  <option value="{% url 'pages:kind_view' 'discount'%}"> التخفيضات</option>
+                  <option value="{% url 'pages:kind_view' 'winter'%}"> ملابس الشتاء</option>
+                  <option value="{% url 'pages:kind_view' 'Summer'%}"> الملابس الصيفية</option>
+                  <option value="{% url 'pages:kind_view' 'ALHajab'%}"> Al Hejab</option>
+                </select>
+                </li>
+
+
+                <li><a class="nav-link scrollto" href="{% url 'pages:contact' %}">تواصل معنا</a></li>
+                <li><a href="{% url 'pages:app' %}#about-boxes">تسوق الان</a></li></ul>
+            </nav>
+        </div>
+    </div>
+ </header>

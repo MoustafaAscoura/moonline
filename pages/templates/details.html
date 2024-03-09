@@ -1,178 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
 
-        {% load static %}
+{% block head %}
+  <title>Product Details</title>
+{% endblock head%}
 
-        <!DOCTYPE html>
-        <html lang="en">
-        
-        <head>
-          <meta charset="utf-8">
-          <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        
-          <title> Details</title>
-          <meta content="" name="description">
-          <meta content="" name="keywords">
-        
- 
-          <link href="{% static 'assets/img/favicon' %}" rel="icon">
-          <link href="{% static 'assets/img/apple-touch-icon.png' %}rel="apple-touch-icon">
-        
-      <!-- Google Fonts -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet" >
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/remixicon/remixicon.css ' %}"rel="stylesheet">
-  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css' %}"  rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-        </head>
-        
-        <body>
-      
-          <main id="main">
-        
-            <!-- ======= Breadcrumbs ======= -->
-            <section id="breadcrumbs" class="breadcrumbs">
-              <div class="container">
-        
-                <div class="d-flex justify-content-between align-items-center">
-                  <h2> MoonLine</h2>
-                  <ol>
-                    <li><a href=" ">Home</a></li>
-                    <li> Details</li>
-                  </ol>
-                </div>
-        
-              </div>
-            </section><!-- End Breadcrumbs -->
-        
-            <!-- ======= Portfolio Details Section ======= -->
-            <section id="portfolio-details" class="portfolio-details">
-              <div class="container">
-        
-                <div class="row gy-4">
-        
-                  <div class="col-lg-8">
-                    <div class="portfolio-details-slider swiper">
-                      <div class="swiper-wrapper align-items-center">
-                       
-                        <div class="swiper-slide">
-                          <img src="{{one_pro.additional_image_1.url}}" alt="">
-                        </div>
-        
-                        <div class="swiper-slide">
-                          <img src="{{one_pro.additional_image_2.url}}" alt="">
-                        </div>
-        
-                  
-                      </div>
-                      <div class="swiper-pagination"></div>
-                    </div>
-                  </div>
-        
-                  <div class="col-lg-4" dir="rtl">
-                    <div class="portfolio-info">
-                      <h3>المعلومات</h3>
-                      <ul>
-                        <li dir="rtl"><strong>الاسم:    </strong>: {{one_pro.product_name}}"</li>
-                        <li dir="rtl"><strong>الوصف</strong>: {{one_pro.product_description}}"</li>
-                        <li dir="rtl"><strong>السعر</strong>: {{one_pro.PRDPrice}}"  دينار كويتي</li>
-                        <li><strong></strong><a href="{% url 'pages:form_order' one_pro.id %}"> اطلب</li>
-                      
-                     
-                      </ul>
-                    </div>
-                    <div class="portfolio-description">
-                      
-                    
-                    </div>
-                  </div>
-        
-                </div>
-        
-              </div>
-            </section><!-- End Portfolio Details Section -->
-        
-          </main><!-- End #main -->
-        
-
- 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
+{% block content %}
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-        <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>MoonLine</h3>
-              <p>
-            
-                <strong>Phone:</strong>+965 9793 0622<br>
-              
-              </p>
-              <div class="social-links mt-3">
-               
-              
+        <div class="d-flex justify-content-between align-items-center">
+          <h2> MoonLine</h2>
+          <ol>
+            <li><a href=" ">Home</a></li>
+            <li> Details</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{{one_pro.additional_image_1.url}}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{{one_pro.additional_image_2.url}}" alt="">
+                </div>
+
+
               </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
-      
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a >Delivery Service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a >High quality</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a >Product Management</a></li>
-          
-            </ul>
+          <div class="col-lg-4" dir="rtl">
+            <div class="portfolio-info">
+              <h3>المعلومات</h3>
+              <ul>
+                <li dir="rtl"><strong>الاسم:    </strong>: {{one_pro.product_name}}"</li>
+                <li dir="rtl"><strong>الوصف</strong>: {{one_pro.product_description}}"</li>
+                <li dir="rtl"><strong>السعر</strong>: {{one_pro.PRDPrice}}"  دينار كويتي</li>
+                <li><strong></strong><a href="{% url 'pages:form_order' one_pro.id %}">اطلب</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+
+
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4></h4>
-            <p>Welcome to our fashion page </p>
-            <form action="" method="post">
-              {% comment %} <input type="submit" value="Shop Now"> {% endcomment %}
-            </form>
-             design by company :Shanpalkw +965 9903 2688
-             
-          </div></div>
+        </div>
+
       </div>
-    </div>
+    </section><!-- End Portfolio Details Section -->
 
-  
-    </div>
-  </footer>
-
-  
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
-
-</body>
-
-</html>
+  </main><!-- End #main -->
+{% endblock content%}
