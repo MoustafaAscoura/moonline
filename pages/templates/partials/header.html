@@ -5,23 +5,10 @@
                <a href="{% url 'pages:app' %}">Moonline</a>
             </div>
             <button type="button" class="nav-toggler1">
-               <span></span>
+                <svg class="h-75 w-75 text-muted" style="fill: #ff4917dc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
             </button>
             <nav class="nav1">
                <ul>
-                <li><select id="kk" onchange="redirectToLink(this)" style="border-radius: 15%; color: aliceblue;background-color: #ff4a17;">
-                  <option value=""> الأقسام</option>
-                  <option value="{% url 'pages:kind_view' 'classic'%}"> عصري</option>
-                  <option value="{% url 'pages:kind_view' 'New'%}"> جديد</option>
-                  <option value="{% url 'pages:kind_view' 'Black'%}"> اسود</option>
-                  <option value="{% url 'pages:kind_view' 'discount'%}"> التخفيضات</option>
-                  <option value="{% url 'pages:kind_view' 'winter'%}"> ملابس الشتاء</option>
-                  <option value="{% url 'pages:kind_view' 'Summer'%}"> الملابس الصيفية</option>
-                  <option value="{% url 'pages:kind_view' 'ALHajab'%}"> Al Hejab</option>
-                </select>
-                </li>
-
-
                 <li><a class="nav-link scrollto" href="{% url 'pages:contact' %}">تواصل معنا</a></li>
                 <li><a href="{% url 'pages:app' %}#about-boxes">تسوق الان</a></li></ul>
             </nav>

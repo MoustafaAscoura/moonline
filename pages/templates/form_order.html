@@ -1,136 +1,114 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
     <title>Place Your Order</title>
-{% endblock head%}
+{% endblock head %}
 
 {% block content %}
-    <main class="col-md-7 container" dir="rtl">
-        <br><br>
-        <header>يرجى ادخال المعلومات كامل</header>
 
-        <form action="#"  method="post">
-                {% csrf_token %}
-            <div class="form first">
-                <div class="details personal">
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>الاسم الكامل</label>
-                            <input type="text" name="Full Name" placeholder="Enter your name" required>
-                        </div>
+<main>
+    <div class="container mx-auto" dir="rtl">
+    <br><br>
+    <h2 class="fw-bold">يرجى ادخال المعلومات كاملة</h2>
 
-                        <div class="input-field">
-                            <label>رقم الهاتف</label>
-                            <input type="text" name="Phone" placeholder="Enter your Phone" onclick="showHintText()" required>
-                            <small id="hint-text" class="hint-text">سيتم إرسال رسالة تأكيد إلى الرقم المدخل</small>
-                        </div>
-                        <script>function showHintText() {
-                            var hintText = document.getElementById("hint-text");
-                            hintText.style.display = "inline";
-                          }
-                          </script>
-                        <div class="input-field">
-                            <label> طول العباية</label>
-                            <input type="number" name="Length" placeholder="Enter your lenght" required>
-                        </div>
+    <form action="#"  method="post">
+            {% csrf_token %}
+        <div class="form first my-4 pb-5  px-3">
+            <div class="details personal">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">الاسم الكامل</label>
+                        <input class="form-control" type="text" name="Full Name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">رقم الهاتف</label>
+                        <input class="form-control" type="text" name="Phone" placeholder="Enter your Phone" onclick="showHintText()" required>
+                        <small id="hint-text" class="hint-text">سيتم إرسال رسالة تأكيد إلى الرقم المدخل</small>
+                    </div>
 
-                        <div class="input-field">
-                            <label> اكتاف العباية</label>
-                            <input type="number" name="shoulders" placeholder="Enter your shoulders_size" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold"> طول العباية</label>
+                        <input class="form-control" type="number" name="Length" placeholder="Enter your lenght" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label>كم العباية</label>
-                            <input type="number" name="sleeve" placeholder="Enter  Abaya sleeve" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold"> اكتاف العباية</label>
+                        <input class="form-control" type="number" name="shoulders" placeholder="Enter your shoulders_size" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label> صدر العباية</label>
-                            <input type="number" name="width" placeholder="Enter Abaya Chest" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">كم العباية</label>
+                        <input class="form-control" type="number" name="sleeve" placeholder="Enter  Abaya sleeve" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label>المنطقة</label>
-                            <input type="text" name="area" placeholder="Enter" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold"> صدر العباية</label>
+                        <input class="form-control" type="number" name="width" placeholder="Enter Abaya Chest" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label> مكان التسليم: </label>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">المنطقة</label>
+                        <input required class="form-control" list="datalistOptions" name="area" placeholder="ابحث عن المنطقة">
+                        <datalist dir="rtl" id="datalistOptions">
+                            {% for city in cities %}
+                                <option dir="rtl" value="{{city}}">
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold"> مكان التسليم: </label>
 
-                            <select type="text" name="type_address" required>
-                                <option  value="Home">منزل</option>
-                                <option value="Apartment">بناية</option>
-                                <option value="office">مكتب</option> </select>
-                        </div>
+                        <select class="form-control" type="text" name="type_address" required>
+                            <option  value="Home">منزل</option>
+                            <option value="Apartment">بناية</option>
+                            <option value="office">مكتب</option> </select>
+                    </div>
 
-                        <div class="input-field">
-                            <label>المنزل</label>
-                            <input type="text" name="house" placeholder="Enter" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">المنزل</label>
+                        <input class="form-control" type="text" name="house" placeholder="Enter" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label> الطابق </label>
-                            <input type="text" name="block" placeholder="Enter" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold"> الطابق </label>
+                        <input class="form-control" type="text" name="block" placeholder="Enter" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label>الشارع </label>
-                            <input type="text" name="street" placeholder="Enter" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">الشارع </label>
+                        <input class="form-control" type="text" name="street" placeholder="Enter" required>
+                    </div>
 
-                        <div class="input-field">
-                            <label>ملاحظات</label>
-                            <input type="text" name="notes" placeholder="Enter your note" required>
-                        </div>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">قطعة </label>
+                        <input class="form-control" type="text" name="piece" placeholder="Enter" required>
+                    </div>
 
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">جادة </label>
+                        <input class="form-control" type="text" name="district" placeholder="Enter" required>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <label class="form-label fs-5 fw-bold">ملاحظات</label>
+                        <input class="form-control" type="text" name="notes" placeholder="Enter your note" required>
                     </div>
                 </div>
-                <button class="nextBtn">
-                    <span class="btnText">التالي</span>
-                    <i class="uil uil-navigator"></i>
-                </button>
             </div>
-        </form>
-    </main>
-{% endblock content%}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <button class="btn btn-warning px-5 float-start ms-1 text-light fw-bold py-2" style="background-color: #ff4917dc;">
+                <span class="btnText">التالي</span>
+                <i class="uil uil-navigator"></i>
+            </button>
+        </div>
+    </form>
+    </div>
+</main>
+<script>function showHintText() {
+    var hintText = document.getElementById("hint-text");
+    hintText.style.display = "inline";
+}
+</script>
+{% endblock content %}

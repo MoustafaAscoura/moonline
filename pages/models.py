@@ -80,16 +80,18 @@ class Order(models.Model):
     shoulders = models.IntegerField(_("أكتاف العباية"))
     sleeve = models.IntegerField(_("أكمام العباية "))
     width = models.IntegerField(_("صدر العباية"))
-    typee = {('Home', 'منزل'),
+    address_types = {('Home', 'منزل'),
              ('Apartment', 'بناية'),
              ('office', 'مكتب'),
 
              }
     area = models.CharField(_("المنطقة"), max_length=500)
-    type_address = models.CharField(_("مكان التسليم:"), choices=typee, max_length=100)
+    type_address = models.CharField(_("مكان التسليم:"), choices=address_types, max_length=100)
     block = models.CharField(_("الطابق"), max_length=500)
     street = models.CharField(_("الشارع"), max_length=500)
     house = models.CharField(_("المنزل"), max_length=500)
+    district = models.CharField(_("جادة"), max_length=500, default="")
+    piece = models.CharField(_("قطعة"), max_length=500, default="")
 
     # payment=models.BooleanField(_("payment"),default=False)
     amount = models.IntegerField(_("السعر المدفوع"))
