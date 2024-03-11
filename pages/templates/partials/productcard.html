@@ -11,11 +11,11 @@
         class="card-img-top" alt="...">
       </a>
     {%endif %}
-    <div class="card-body text-center" dir="rtl">
-      <h5 class="card-title"><a href="{% url 'pages:details' product.id %}">{{product.name}}</a></h5>
+    <div class="card-body text-center d-flex flex-column" dir="rtl">
+      <h5 class="card-title"><a href="{% url 'pages:details' product.id %}">{{product.product_name}}</a></h5>
       <p class="card-text" dir="rtl">{{product.PRDPrice}} دينار كويتي </p>
       <p class="card-text text-muted" style="font-size: 12px;" dir="rtl">{{product.product_description}} </p>
-      <a class="mt-2" href="{% url 'pages:details' product.id %}" style="color: #ff4917dc;">رؤية المزيد</a>
+      <a class="mt-auto" href="{% url 'pages:details' product.id %}" style="color: #ff4917dc;">رؤية المزيد</a>
     </div>
 
     {% if product.PRDDiscountPrice %}
