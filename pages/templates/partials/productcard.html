@@ -1,0 +1,23 @@
+<div class="card position-relative" style="overflow: hidden;min-height: 250px;">
+    {% if product.product_image %}
+      <a href="{% url 'pages:details' product.id %}">     
+        <img src="{{product.product_image.url}}" class="card-img-top" 
+        width="200" height="400" style="object-fit: cover; object-position: top;" alt="...">
+      </a>
+    {%else%}
+      <a href="{% url 'pages:details' product.id %}">     
+        <img src="/assets/img/portfolio/portfolio-7.jpg" 
+        width="200" height="400" style="object-fit: cover; object-position: top;"
+        class="card-img-top" alt="...">
+      </a>
+    {%endif %}
+    <div class="card-body text-center" dir="rtl">
+      <h5 class="card-title"><a href="{% url 'pages:details' product.id %}">{{product.name}}</a></h5>
+      <p class="card-text" dir="rtl">{{product.PRDPrice}} دينار كويتي </p>
+      <p class="card-text text-muted" style="font-size: 12px;" dir="rtl">{{product.product_description}} </p>
+    </div>
+
+    {% if product.PRDDiscountPrice %}
+      <span class="badge offer-badge">خصم {{product.PRDDiscountPrice}} %</span>
+    {% endif %}
+</div>

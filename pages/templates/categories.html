@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Home</title>
+{% endblock head%}
+
+{% block content %}
+
+    <main>
+      <div class="container py-5" dir="rtl" data-aos="fade-up">
+        <h2 class="section-title fw-bold mb-5">جميع الأقســام</h2>
+        <div class="row">
+            {%for category in categories %}
+              <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="50">
+                <div class="card">
+                    {% if category.image %}
+                      <a href="{% url 'pages:category' category.id %}">     
+                        <img src="{{category.image.url}}" class="card-img-top" 
+                        width="200" height="400" style="object-fit: cover;object-position: top;" alt="...">
+                      </a>
+                    {%else%}
+                      <a href="{% url 'pages:category' category.id %}">     
+                        <img src="/assets/img/portfolio/portfolio-7.jpg" 
+                        width="200" height="400" style="object-fit: cover;object-position: top;"
+                        class="card-img-top" alt="...">
+                      </a>
+                    {%endif %}
+                    <div class="card-body text-center" dir="rtl">
+                      <h5 class="card-title"><a href="{% url 'pages:category' category.id %}">{{category.name}}</a></h5>
+                    </div>
+
+                  </div>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+    </main>
+    <a href="https://api.whatsapp.com/message/Q3OD4LY537Z4F1" class="whatsApp" target="_blank">
+      <i class="fa fa-whatsapp my-whatsApp"></i>
+    </a>
+
+  {% endblock content%}

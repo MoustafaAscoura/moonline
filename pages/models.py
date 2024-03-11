@@ -22,34 +22,36 @@ from django.core.files import File
 
 class about(models.Model):
     info = models.TextField(_("وصف الخدمات "))
+
     class Meta:
         verbose_name = _("معلومات الصفحة الرئيسية")
         verbose_name_plural = _("معلومات الصفحة الرئيسية")
 
+class Category(models.Model):
+    def __str__(self):
+        return self.name
+    
+    name = models.CharField(_('اسم القسم'), max_length=50)
+    image = models.ImageField(
+        upload_to='products/imgs/category_imgs/', blank=True, null=True,
+        verbose_name=_("صورة توضيحية للقسم")
+    )
+    class Meta:
+        verbose_name = _("أقسام العبايات")
+        verbose_name_plural = _("أقسام العبايات")
 
 class Product(models.Model):
-    listt = {('Summer', 'قطع صيفية'),
-             ('winter', 'قطع شتوية'),
-             ('New', 'جديد'),
-             ('classic', 'عصري(كلاسيكي)'),
-             ('Black', 'أسود'),
-             ('ALHajab', 'ALHajab'),
-             ('discount', 'خصومات')
-             }
-
     id = models.IntegerField(primary_key=True, default=True)
     product_name = models.CharField(max_length=150, verbose_name=_("اسم المنتج"), null=False)
     product_description = models.TextField(verbose_name=_(" مواصفات المنتج"))
-    listt = models.CharField(_("تصنيف المنتج "), choices=listt, max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products", null=True)
+
     product_image = models.ImageField(
         upload_to='products/imgs/', default='products/product.jpg', max_length=500,
         verbose_name=_("صورة رئيسية للمنتج"), null=False)
 
-    PRDPrice = models.FloatField(
-        blank=True, verbose_name=_("سعر المنتج"), null=False)
-
-    PRDDiscountPrice = models.FloatField(default=0,
-                                         blank=True, null=True, verbose_name=_("خصم على هذه القطعة"))
+    PRDPrice = models.FloatField(blank=True, verbose_name=_("سعر المنتج"), null=False)
+    PRDDiscountPrice = models.FloatField(default=0, blank=True, null=True, verbose_name=_("خصم على هذه القطعة"))
 
     additional_image_1 = models.ImageField(
         upload_to='products/imgs/product_imgs/', blank=True, null=True, max_length=500,

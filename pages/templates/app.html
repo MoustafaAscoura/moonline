@@ -24,34 +24,19 @@
     <!-- ======= About Boxes Section ======= -->
     <section id="about-boxes" class="about-boxes">
 
-      <div class="container" data-aos="fade-up">
-
+      <div class="container" dir="rtl" data-aos="fade-up">
+        <h1 class="section-title">مُضافة حديثاً</h1>
         <div class="row">
-            {%for i in produ %}
-                <div class="col-lg-3 col-md-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-               <div class="card">
-
-                  {% if i.product_image%}<a href="{% url 'pages:details' i.id %}">     <img src="{{i.product_image.url}}"   class="card-img-top" alt="..."></a>
-                  {%else%}
-                  <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                  {%endif %}
-                  <div class="card-icon">
-                    <i class="ri-brush-4-line"></i>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'pages:details' i.id %}">{{i.product_name}}</a></h5>
-                    <p class="card-text" dir="rtl">السعر:{{i.PRDPrice}}دينار كويتي </p>
-                    <p class="card-text" dir="rtl">{{i.product_description}} </p>
-                    <p class="card-text" dir="rtl">الخصم:{{i.PRDDiscountPrice}} %</p>
-                    <a href="{% url 'pages:details' i.id %}" >عرض</a>
-                  </div>
-
-                </div>
+            {%for product in products %}
+              <div class="col-lg-3 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="50">
+                {% include "partials/productcard.html" with product=product %}
               </div>
             {% endfor %}
         </div>
       </div>
     </section>
-    <a href="https://api.whatsapp.com/send?phone=0096597930622&text=&source=&data=" class="whatsApp" target="_blank"><i class="fa fa-whatsapp my-whatsApp"></i></a>
+    <a href="https://api.whatsapp.com/message/Q3OD4LY537Z4F1" class="whatsApp" target="_blank">
+      <i class="fa fa-whatsapp my-whatsApp"></i>
+    </a>
 
   {% endblock content%}
