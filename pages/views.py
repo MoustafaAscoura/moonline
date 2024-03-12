@@ -4,13 +4,16 @@ from django.views.generic import ListView, DetailView
 
 def contact(request):
     return render(request, 'contact.html', {
-        'aboutt': about.objects.all()
+        'aboutt': about.objects.first()
     })
 
 def app(request):
     products = Product.objects.all()
+    landing_image = about.objects.first().landing_image
+
     return render(request, 'app.html', {
-        'products': products
+        'products': products,
+        'landing_image': landing_image
     })
 
 

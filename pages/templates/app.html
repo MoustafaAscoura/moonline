@@ -8,6 +8,21 @@
 {% block content %}
 
   <!-- ======= Hero Section ======= -->
+  {% if landing_image and landing_image.url %}
+  <style>
+    #hero {
+      background: url({{landing_image.url}}) top center;
+      background-size: cover;
+    }
+  </style>
+  {% else %}
+  <style>
+    #hero {
+      background: url("{% static 'assets/img/hero-bg.jpg' %}") top center;
+      background-size: cover;
+    }
+  </style>
+  {% endif %}
   <section id="hero">
     <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
       <h1>Welcome to MoonLine</h1>

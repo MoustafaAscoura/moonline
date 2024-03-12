@@ -22,7 +22,12 @@ from django.core.files import File
 
 class about(models.Model):
     info = models.TextField(_("وصف الخدمات "))
-
+    landing_image = models.ImageField(
+        upload_to='products/imgs/', verbose_name=_("صورة الغلاف في الصفحة الرئيسية"), null=True)
+    
+    def __str__(self) -> str:
+        return "بيانات الموقع والصفحة الرئيسية"
+    
     class Meta:
         verbose_name = _("معلومات الصفحة الرئيسية")
         verbose_name_plural = _("معلومات الصفحة الرئيسية")
