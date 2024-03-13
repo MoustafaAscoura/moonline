@@ -47,18 +47,16 @@
           </div>
 
           <div class="col-lg-4" dir="rtl">
-            <div class="portfolio-info">
+            <div class="portfolio-info pb-5">
               <h3>المعلومات</h3>
               <ul>
                 <li dir="rtl"><strong>الاسم:    </strong>: {{one_pro.product_name}}"</li>
                 <li dir="rtl"><strong>الوصف</strong>: {{one_pro.product_description}}"</li>
                 <li dir="rtl"><strong>السعر</strong>: {{one_pro.PRDPrice}}"  دينار كويتي</li>
-                <li><strong></strong><a href="{% url 'pages:form_order' one_pro.id %}">اطلب</a></li>
+                <li><a class="btn btn-outline w-100"
+                  style="border-color: var(--primary); color: var(--primary); float: left;"
+                  href="{% url 'pages:form_order' one_pro.id %}">اطلب</a></li>
               </ul>
-            </div>
-            <div class="portfolio-description">
-
-
             </div>
           </div>
 
