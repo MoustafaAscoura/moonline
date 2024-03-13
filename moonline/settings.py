@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['moonline.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     # 'crispy_forms',
-    'django_bootstrap5',
     'pages',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-CRISPY_TEMPLATE_PACK = "bootstrap4"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

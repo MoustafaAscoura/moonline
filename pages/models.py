@@ -22,6 +22,7 @@ from django.core.files import File
 
 class about(models.Model):
     info = models.TextField(_("وصف الخدمات "))
+    theme_color = models.CharField(max_length=10, default="#ff4a17")
     landing_image = models.ImageField(
         upload_to='products/imgs/', verbose_name=_("صورة الغلاف في الصفحة الرئيسية"), null=True)
     

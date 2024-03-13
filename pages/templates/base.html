@@ -23,7 +23,6 @@
 
         <!-- Vendor CSS Files -->
         <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
         <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
         <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
@@ -31,9 +30,15 @@
         <!-- Template Main CSS File -->
         <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
         <link href="{% static 'assets/css/style2.css' %}" rel="stylesheet">
+        {% if theme_color %}
+            <style>
+                :root {
+                    --primary: {{theme_color}};
+                }
+            </style>
+        {% endif %}
     </head>
     <body>
-
         {% include 'partials/header.html' %}
 
         {% block content %}

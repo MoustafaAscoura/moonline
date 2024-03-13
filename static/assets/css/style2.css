@@ -32,7 +32,7 @@ a{
 /*header*/
 
 nav.navbar {
-	background-color:#ff4917dc !important;
+	background-color:var(--primary) !important;
 }
 
 .section-title {
@@ -45,11 +45,11 @@ nav.navbar {
 	content: "";
 	height: 5px;
 	display: block;
-	background: #ff8664;
+	background: var(--primary);
 }
 
 span.offer-badge {
-    background-color: #ff4917dc;
+    background-color: var(--primary);
     transform: rotateZ(45deg);
     padding-inline: 40px;
     right: -40px;

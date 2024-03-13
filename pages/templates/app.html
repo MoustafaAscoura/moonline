@@ -29,7 +29,6 @@
       <h2></h2>
       <div class="d-flex">
         <a class="btn-get-started" href="#about-boxes" > تسوق الان</a>
-        <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
       </div>
     </div>
   </section><!-- End Hero -->
@@ -40,13 +39,42 @@
     <section id="about-boxes" class="about-boxes">
 
       <div class="container" dir="rtl" data-aos="fade-up">
-        <h1 class="section-title">مُضافة حديثاً</h1>
-        <div class="row">
-            {%for product in products %}
-              <div class="col-lg-3 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="50">
-                {% include "partials/productcard.html" with product=product %}
+        <div class="categories">
+          <h1 class="section-title">أقسام العبايات</h1>
+          <div class="row">
+            {%for category in categories %}
+              <div class="col-md-6 col-12" data-aos="fade-up" data-aos-delay="50">
+                <div class="card">
+                    {% if category.image %}
+                      <a href="{% url 'pages:category' category.id %}">     
+                        <img src="{{category.image.url}}" class="card-img-top" 
+                        width="200" height="400" style="object-fit: cover;object-position: top;" alt="...">
+                      </a>
+                    {%else%}
+                      <a href="{% url 'pages:category' category.id %}">     
+                        <img src="/assets/img/portfolio/portfolio-7.jpg" 
+                        width="200" height="400" style="object-fit: cover;object-position: top;"
+                        class="card-img-top" alt="...">
+                      </a>
+                    {%endif %}
+                    <div class="card-body text-center" dir="rtl">
+                      <h5 class="card-title"><a href="{% url 'pages:category' category.id %}">{{category.name}}</a></h5>
+                    </div>
+
+                  </div>
               </div>
             {% endfor %}
+        </div>
+        </div>
+        <div class="products mt-5 pt-5 pill" style="border-top: 3px solid #80808080;">
+          <h1 class="section-title">مُضافة حديثاً</h1>
+          <div class="row">
+              {%for product in products %}
+                <div class="col-lg-4 col-md-6 col-12 mb-5" data-aos="fade-up" data-aos-delay="50">
+                  {% include "partials/productcard.html" with product=product %}
+                </div>
+              {% endfor %}
+          </div>
         </div>
       </div>
     </section>
